@@ -1,5 +1,4 @@
-Hola mi nombre es Kevin, 
-soy de la ciudad de Bogota, 
-Me atrae el tema del Front-End
-Tecnico en sistemas
-18 años
+Hi there
+My name is Kevin,I'm 18 years, 
+I'm from Bogota, Colombia 
+Currently I've studied a systems technician

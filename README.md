@@ -44,7 +44,7 @@ _las herramientas usadas para crear el proyecto_
 
 - **Abelardo C**: Descipción
 
-- **Robinson A**: Descipción
+- **Robinson A**: Hi everybody! I am in this wonderful world of software development, learning new technologies, with the aim of supporting my team.  
 
 - **José De Jesús Barajas Sotelo**: ¡Hola! Soy estudiante desarrollador joven colombiano. Decidí involucrarme en el mundo de la tecnología con mi carrera como Ing. en control y automatización, ya que me fascina y es la trayectoria que sigue el mundo. Tengo conocimientos en electrónica, instrumentación, automatización y control; manejo lenguajes de programación como C++, Java, Labview, JavaScript, Python, Matlab, R studio, entre otros.
 

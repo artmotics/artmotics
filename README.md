@@ -42,7 +42,7 @@ _las herramientas usadas para crear el proyecto_
 
 - **Cristian C**: Descipción
 
-- **Abelardo C**: Descipción
+- **Abelardo C**: Un saludo a todos, soy un entusiasta de la programación y he aprendido mucho en esta experiencia de misión tic que espero poder aplicar en mi campo, aunque soy una persona mayor me encanta poder compartir experiencias con la gente joven. 
 
 - **Robinson A**: Hi everybody! I am in this wonderful world of software development, learning new technologies, with the aim of supporting my team.  
 

@@ -19,7 +19,7 @@ _ScrumTeam_
 
 - **Cristian C**: - _Desarrollador_ - [User](https://github.com/)
 - **Abelardo C**: - _Analista_ - [User](https://github.com/)
-- **Robinson A**: - _Product Owner_ - [User](https://github.com/)
+- **Robinson A**: - _Product Owner_ - [User](https://github.com/mynternet)
 - **José De Jesús Barajas Sotelo**: - _Administrador BD_ - [GitHub Profile](https://github.com/jdbarajass)
 - **Kevin David Guevara Manosalva**: - _Scrum Master_ - [GitHub Profile](https://github.com/KevinG090)
 

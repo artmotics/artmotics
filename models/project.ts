@@ -13,7 +13,7 @@ interface Proyecto {
     
 }
 
-const proyectShema = new Schema<Proyecto>({
+const projectShema = new Schema<Proyecto>({
     nombre:{
         type:String,
         required:true,  
@@ -45,9 +45,9 @@ const proyectShema = new Schema<Proyecto>({
         type:Schema.Types.ObjectId,
         required:true,
         ref:UserModel,
-    },
+    },      
 });
 
-const ProyectModel = model('Proyecto',proyectShema,'projects');
+const ProjectModel = model('Proyecto',projectShema,'projects');
 
-export {ProyectModel};
+export {ProjectModel};

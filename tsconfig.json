@@ -1,0 +1,6 @@
+// Configuraciones que necesito para typescript y el commonJS es para poder hacer los imports como los venimos haciendo
+{
+   "compilerOptions": {
+       "module":"CommonJS"
+   } 
+}

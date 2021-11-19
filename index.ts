@@ -1,84 +1,29 @@
-import conectarBD from "./db/db";
-import {UserModel} from "./models/users";
-import {Enum_Rol, Enum_TipoObjetivo} from "./models/enums";
-import { ProjectModel } from "./models/project";
-import { ObjectiveModel } from "./models/objetive";
+import express from 'express';
+import cors from 'cors';
+import { ApolloServer } from 'apollo-server-express';
+import dotenv from 'dotenv';
+import conectarBD from './db/db';
+import {typeDefs} from './graphql/types';
+import { resolvers } from './graphql/resolvers';
 
-const main = async ()=>{
-   await conectarBD();
+dotenv.config();
 
-    
+const server = new ApolloServer({
+    typeDefs:typeDefs,
+    resolvers:resolvers,
+});
 
-    
-};
-main();
-// BUSCAR E IMPRIMIR EL PROYECTO N1 JUNTO CON EL LIDER QUE SE RELACIONA CON EL USUARIO
-    // const proyecto = await ProyectModel.find({nombre:"Proyecto N1"}).populate("lider");
-    // console.log('El proyecto es:',proyecto);
+const app = express();
 
-    // const proyectos = await ProjectModel.find({_id:'6193a879fd9a94297ec3ab9b'}).populate("lider");
-    // console.log("El proyecto encontrado es : ",proyectos);
+app.use(express.json());
 
-    // const objetivo = await ObjectiveModel.find({ project: '6193a879fd9a94297ec3ab9b' });
-    // console.log("Los objetivos encontrado son : ",objetivo);
+app.use(cors());
 
-// CREAR USUARIO
-    // await UserModel.create({
-    //     correo:"David@gmail.com",
-    //     identificacion:"2966080001",
-    //     nombre:"David",
-    //     apellido:"Guevara",
-    //     rol:Enum_Rol.administrador,
-    // }).then((u)=>{
-    //     console.log("usuario creado",u);
-    // }).catch((e)=>{
-    //     console.error("error creando el usuario",e);
-    // });
+app.listen({port: process.env.PORT || 4000}, async () => {
+    await conectarBD();
+    await server.start();
 
-// EDITAR USUARIO
-    // await UserModel.findOneAndUpdate(
-    //     { correo : "David@gmail.com"},
-    //     { nombre : "David"}
-    // );
+    server.applyMiddleware({app});
 
-// Eliminar Usuario 
-    // await UserModel.findOneAndDelete (
-    //     { correo : "kevin@gmail.com"},
-    // );
-
-// Imprimir / Buscar datos
-    //  await UserModel.find() // findOne ({ : " el valor de la x"})
-    //  .then((u)=>{console.log("usuarios => ",u);
-    //  })
-    //  .catch((e)=>{
-    //      console.error("error obteniendo usuarios",e);
-    //  })
-
-// CREACION DEL USUARIO, PROYECTO Y OBJETIVOS RELACIONANDOLOS    
-    // const usuarioInicial = await UserModel.create({
-    //     correo:"David@gmail.com",
-    //     identificacion:"2966080001",
-    //     nombre:"David",
-    //     apellido:"Guevara",
-    //     rol:Enum_Rol.administrador,
-    // });
-
-    // const proyectoCreado = await ProjectModel.create({
-    //    nombre:"Proyecto N1",
-    //    presupuesto:120,
-    //    fechaInicio: Date.now(),
-    //    fechaFin: new Date("2022/11/10"),
-    //    lider: usuarioInicial._id,
-    // });
-
-    // const objetivoGeneral1 = await ObjectiveModel.create({
-    //     descripcion:"Este es un objetivo general",
-    //     tipo:Enum_TipoObjetivo.general,
-    //     proyecto:proyectoCreado._id,
-    // });
-    
-    // const objetivoEspecifico = await ObjectiveModel.create({
-    //     descripcion:"Este es un objetivo especifico",
-    //     tipo:Enum_TipoObjetivo.especifico,
-    //     proyecto:proyectoCreado._id,
-    // });
+    console.log("Servidor Listo");
+});

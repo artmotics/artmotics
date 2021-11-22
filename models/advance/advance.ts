@@ -1,6 +1,6 @@
 import { Schema, model } from "mongoose";
-import { ProjectModel } from "./project";
-import { UserModel } from "./users";
+import { ProjectModel } from "../project/project";
+import { UserModel } from "../user/users";
 
 interface Advance {
     fecha: Date;

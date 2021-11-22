@@ -2,20 +2,6 @@ import {gql} from 'apollo-server-express';
 
 const typeProject = gql`
 
-    enum Enum_EstadoProyecto{
-        ACTIVO
-        INACTIVO
-    }
-    enum Enum_FaseProyecto{
-        INICIADO 
-        DESARROLLO 
-        TERMINADO 
-        NULA 
-    }
-    enum Enum_TipoObjetivo {
-        GENERAL 
-        ESPECIFICO 
-    }
     type Objetivo{
         _id:ID!
         descripcion:String!

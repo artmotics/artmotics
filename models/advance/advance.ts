@@ -36,5 +36,5 @@ const advanceSchema = new Schema<Advance>({
     },
 });
 
-const AdvanceModel = model ('Advance',advanceSchema,'Advances');
+const AdvanceModel = model ('Advance',advanceSchema,'advances');
 export {AdvanceModel};

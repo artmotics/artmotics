@@ -2,20 +2,6 @@ import {gql} from 'apollo-server-express';
 
 const typeUsers = gql`
 
-    scalar Date
-
-    enum Enum_EstadoUsuario{
-        PENDIENTE
-        AUTORIZADO
-        NO_AUTORIZADO
-    }
-    enum Enum_Rol{
-        ESTUDIANTE
-        LIDER
-        ADMINISTRADOR
-    }
-
-
     type Usuario {
         _id:ID!
         nombre: String!

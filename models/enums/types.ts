@@ -2,8 +2,6 @@ import {gql} from 'apollo-server-express';
 
 const typeEnums = gql`
 
-    scalar Date
-
     enum Enum_EstadoUsuario{
         PENDIENTE
         AUTORIZADO

@@ -41,8 +41,11 @@ const typeDefs = gql`
     type Objetivo{
         _id:ID!
         descripcion:String!
-        tipo: Enum_TipoObjetivo
-             
+        tipo: Enum_TipoObjetivo         
+    }
+    input crearObjetivo{
+        descripcion:String!
+        tipo: Enum_TipoObjetivo         
     }
     type Proyecto {
         _id:ID!
@@ -54,14 +57,14 @@ const typeDefs = gql`
         fase: Enum_FaseProyecto
         lider: Usuario
         objetivo:Objetivo
-    }
-   
+    }  
     type Query {
         Usuarios: [Usuario]
         Usuario(_id:String):Usuario
         Proyectos: [Proyecto]
         Objetivos: [Objetivo]
     }
+
     type Mutation{
         crearUsuario(
             nombre: String!
@@ -95,7 +98,7 @@ const typeDefs = gql`
             estado: Enum_EstadoProyecto
             fase: Enum_FaseProyecto
             lider: String!
-            objetivo:String!   
+            objetivo:[crearObjetivo]   
         ) :Proyecto
     }
 `;

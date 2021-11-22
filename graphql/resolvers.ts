@@ -66,8 +66,8 @@ const resolvers ={
                 fechaFin:args.fechaFin,
                 estado:args.estado,
                 fase:args.fase,
-                objetivo:args.objetivo,
                 lider:args.lider,       
+                objetivo:args.objetivo,
             });
             return proyectoCreado;
         },

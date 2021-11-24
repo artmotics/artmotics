@@ -1,33 +1,28 @@
-// a aqui vamos a hacer todas las conecciones a nuestra base de datos
+// Configuracion del servidor
+import express from "express";
+import cors from "cors";
+import {ApolloServer} from "apollo-server-express";
+import dotenv from "dotenv";
 import conectarBD from "./db/db";
-import {Enum_Rol} from "./models/enums"
-import { UserModel } from "./models/user"; // Se exporta con llaves para que el nombre no pueda ser cambiado sino que sea estrictamente ese nombr ey no genere confusion
-const main = async () => {
-  await conectarBD();
-  // estas funciones dentro del create son una promesa es decir son funciones que debo esparar a que se termine de ejecutar y por eso se coloca el await
-  // Si intento crear un usuario con las mismas caracteristicas arrojará un error
-  await UserModel.create({
-    apellido: "Barajas Sotelo",
-    correo: "jdbarajass@gmail.com",
-    identificacion: "1032464724",
-    nombre: "Jose De Jesus",
-    rol: Enum_Rol.administrador,
-  })
-    .then((u) => {
-      console.log("Usuario creado", u);
-    })
-    .catch((e) => {
-      console.error("Error creando el usuariuo", e);
-    });
+import {typeDefs} from "./graphql/types"
+import { resolvers } from "./graphql/resolvers";
 
-  // Como hacer consultas... Obtener los usuarios
-/*   await UserModel.find()
-    .then((u) => {
-      console.log("Usuarios", u);
-    })
-    .catch((e) => {
-      console.error("Error obteniendo los usuarios",e);
-    }); */
-};
+dotenv.config(); // para que nos deje usar variables de entorno en toda la aplicación
 
-main();
+// En esta linea de codigo definimos el servidor de GraphQL
+const server = new ApolloServer({
+    typeDefs: typeDefs,
+    resolvers: resolvers
+})
+
+const app = express();// Definimos la aplicacion de express
+app.use(express.json());// Para que los reques entren y salgan de tipo JSON
+app.use(cors());// Para poder hacer reques de muchos origenes
+
+// Para poner a correr una aplicacion de express es decir para poner a correr el servidor
+app.listen({ port: process.env.PORT || 4000 }), async () => {
+    await conectarBD(); // para conectarnos a la base de datos
+    await server.start();
+    server.applyMiddleware({ app })// esto es para prender el servidor de apollo y que use los mismo middleware de express
+    console.log("Servidor Listo")
+}

@@ -1,22 +1,22 @@
 const { Schema, model } = require ('mongoose');
 
 const project = new Schema({   
-  nombre: {
+  name: {
     type: String,
     require: true
   },
-  lider: {
-    type: String,
+  budget: {
+    type: Number,
     require: true
   },
-  facultad: {
+  state: {
     type: String,
-    require: true
+    default: "inactive"
   },
-  fechaInicio: {
-    type: Date,
-    default: new Date()
-  } 
+  leader: {
+    type: String,
+    require: true 
+  }
 })
 
-module.exports = model('proyecto', project)
+module.exports = model('proyectos', project)

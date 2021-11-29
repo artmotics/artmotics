@@ -29,4 +29,4 @@ const usuario = new Schema({
   }
 })
 
-module.exports = model(/* user representa la colecion en la db */'user', usuario, /* "Nombre fijo para la base de datos" */)
+module.exports = model('user', usuario, "users")

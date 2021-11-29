@@ -13,9 +13,9 @@ const iniciarServidor = async () => {
       resolvers
     });
   await apollo.start()
-  apollo.applyMiddleware({app:api})
+  apollo.applyMiddleware({app:api/* , path:'/consult' */})
   api.use((request, response)=>{
-    response.send ("404")
+    response.send ("404 Page not found")
   })
   api.listen('8090', ()=>console.log('Server OnLine')
   )

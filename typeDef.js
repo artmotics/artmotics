@@ -8,17 +8,27 @@ const typeDefs=gql`
     estado: String
     perfil: String
   }
-  type Proyecto{
-    name: String,
-    budget: Int
+  type proyecto{
+    nombre: String
+    saldo:String
+    estado: String 
+    lider: String
   }
-
   type Query{
     usuarios: [user]
     usuario(identificacion: Int): user
-    proyectos: [Proyecto]
+    proyecto: [proyecto]
+    getProject(nombre: String): proyecto
+  }
+  inpu UserInput{
+    nombre:String
+    identificacion:Int
+    clave:String
+    perfil:String
+  }
+  type Mutation{
+    createUser(user:UserInput):String
   }
 
 `
-
 module.exports = typeDefs

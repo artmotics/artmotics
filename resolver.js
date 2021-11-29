@@ -11,13 +11,19 @@ const listUsuarios=[
   }
 ]
 
-
 const resolvers = {
   Query:{
     usuarios: () => listUsuarios,
     usuario: (parent, args, context, info)=> listUsuarios.find(user=> user.identificacion === args.identificacion),
-    proyectos: async () => await Project.find({})
-  } }
+    proyecto: async () => await Project.find({}),
+    getProject: async (parent, args, context, info) => await Project.findOne({nombre:args.nombre })
+  },
+  Mutation:{
+    createUser: (parent, args, context, info) => {
+
+    }
+  }
+}
 
 
 module.exports = resolvers

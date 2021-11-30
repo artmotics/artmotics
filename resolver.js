@@ -32,6 +32,11 @@ const resolvers = {
         .then((u) => "User Active")
         .catch((err) => "Failed Activation");
     },
+    deleteUser: (parent, args, context, info) => {
+      return User.deleteOne({ identificacion: args.identificacion })
+        .then((u) => "User delete")
+        .catch((err) => "Failed delete");
+    },
   },
 };
 

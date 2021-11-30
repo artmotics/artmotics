@@ -3,21 +3,21 @@ const {Schema, model} = require ('mongoose')
 const usuario = new Schema({
   nombre: {
     type: String,
-    require: true
+    required: true
   },
   
   identificacion: {
     type: Number,
     unique: true,
-    require: true
+    required: true
   },
   email: {
     type: String,
-    require: true
+    required: true
   },
   clave: {
     type: String,
-    require: true
+    required: true
   },
   estado: {
     type: String,
@@ -25,7 +25,7 @@ const usuario = new Schema({
   },
   perfil: {
     type: String,
-    require: true
+    required: true
   }
 })
 

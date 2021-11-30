@@ -13,13 +13,14 @@ const resolvers = {
     getUsuario: async (parent, args, context, info) => await User.findOne({estado:args.estado }),
   },
   Mutation:{
-    createUser: async (parent, args, context, info) => {
+    createUser: (parent, args, context, info) => {
       const {clave} = args.user;
       const nuevoUsuario = new User(args.user);
       const encryptedPlainText = aes256.encrypt(key, clave);
       nuevoUsuario.clave = encryptedPlainText
-      nuevoUsuario.save();
-      return "Sucess Create User"
+      return nuevoUsuario.save()
+        .then(u => "Sucess create user")
+        .catch(err => "Faild create user")
     }
   }
 }

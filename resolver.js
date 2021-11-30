@@ -37,6 +37,11 @@ const resolvers = {
         .then((u) => "User delete")
         .catch((err) => "Failed delete");
     },
+    deleteProject: (parent, args, context, info) => {
+      return Project.updateOne({ nombre: args.nombre }, {estado:"inactive"})
+        .then((u) => "Project delete")
+        .catch((err) => "Failed delete");
+    },
   },
 };
 

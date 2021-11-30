@@ -29,6 +29,7 @@ const typeDefs = gql`
     createUser(user: UserInput): String
     activeUser(identificacion: Int): String
     deleteUser(identificacion: Int): String
+    deleteProject(nombre:String): String
   }
 `;
 /* 

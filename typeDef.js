@@ -3,18 +3,19 @@ const { gql } = require("apollo-server-express");
 const typeDefs = gql`
   type proyecto {
     nombre: String
-    saldo: Int
-    estado: String
+    activo: Boolean
     lider: String
+    facultad: String
   }
   type usuario {
     nombre: String
     identificacion: Int
+    email: String
     perfil: String
     estado: String
   }
   type Query {
-    proyecto: [proyecto]
+    proyecto : [proyecto]
     getProject(nombre: String): proyecto
     usuario: [usuario]
     getUsuario(estado: String): usuario
@@ -22,6 +23,7 @@ const typeDefs = gql`
   input UserInput {
     nombre: String
     identificacion: Int
+    email: String 
     clave: String
     perfil: String
   }
@@ -30,6 +32,7 @@ const typeDefs = gql`
     activeUser(identificacion: Int): String
     deleteUser(identificacion: Int): String
     deleteProject(nombre:String): String
+    insertUserProject(identificacion:Int, nombreProyecto:String):String
   }
 `;
 /* 
@@ -68,7 +71,11 @@ mutation{
 
 Activar el usuario
 mutation{
-  activeUser(identificacion:882681710)
+  activeUser(identificacion:10011)
+}
+
+mutation{
+ deleteProject(nombre:"Matsoft")
 }
 
 */

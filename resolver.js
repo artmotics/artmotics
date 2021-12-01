@@ -22,7 +22,7 @@ const resolvers = {
       return nuevoUsuario
         .save()
         .then((u) => "Sucess create user")
-        .catch((err) => "Faild create user");
+        .catch((err) => "Failed create user");
     },
     activeUser: (parent, args, context, info) => {
       return User.updateOne(
@@ -38,9 +38,30 @@ const resolvers = {
         .catch((err) => "Failed delete");
     },
     deleteProject: (parent, args, context, info) => {
-      return Project.updateOne({ nombre: args.nombre }, {estado:"inactive"})
+      return Project.updateOne({ nombre: args.nombre }, { activo: "false" })
         .then((u) => "Project delete")
         .catch((err) => "Failed delete");
+    },
+    insertUserProject: async (parent, args, context, info) => {
+      const user = await User.findOne({ identificacion: args.identificacion });
+      if (user && user.estado == "active") {
+        const project = await Project.findOne({ nombre: args.nombreProyecto });
+        if (project && project.activo) {
+          if(project.integrantes.find(i => i == user.identificacion)){
+            return "This user is belong in the project"
+          }else{
+            await Project.updateOne(
+              { nombre: args.nombreProyecto },
+              { $push: { integrantes: user.identificacion } })
+              return "Sucess user add"
+          }
+          
+        } else {
+          return "Project is invalid";
+        }
+      } else {
+        return "User is invalid";
+      }
     },
   },
 };

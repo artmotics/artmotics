@@ -1,16 +1,18 @@
-import { Schema, model } from "mongoose";
-import { ProjectModel } from "../project/project";
-import { UserModel } from "../user/users";
+import mongoose from "mongoose";
+import { ProjectModel } from "../project/project.js";
+import { UserModel } from "../user/users.js";
 
-interface Advance {
-    fecha: Date;
-    descripcion: string;
-    observaciones: [string];
-    proyecto:Schema.Types.ObjectId;
-    creadoPor: Schema.Types.ObjectId;
-}
+const { Schema, model } = mongoose;
 
-const advanceSchema = new Schema<Advance>({
+// interface Advance {
+//     fecha: Date;
+//     descripcion: string;
+//     observaciones: [string];
+//     proyecto:Schema.Types.ObjectId;
+//     creadoPor: Schema.Types.ObjectId;
+// }
+
+const advanceSchema = new Schema({
     fecha:{
         type:Date,
         required:true,

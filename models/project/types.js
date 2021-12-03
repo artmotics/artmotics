@@ -20,7 +20,8 @@ const typeProject = gql`
         estado: Enum_EstadoProyecto
         fase: Enum_FaseProyecto
         lider: Usuario
-        objetivo:Objetivo
+        objetivo:[Objetivo]
+        avance:[Avance]
     }  
     type Query {
         Proyectos: [Proyecto]
@@ -37,6 +38,17 @@ const typeProject = gql`
             lider: String!
             objetivo:[crearObjetivo]   
         ) :Proyecto
+
+        editarProyecto(
+            _id:String!
+            nombre: String
+            presupuesto:Float
+            fechaInicio: Date
+            fechaFin:Date
+            estado: Enum_EstadoProyecto
+            fase: Enum_FaseProyecto
+            lider: String
+        ):Proyecto
     }
 `;
 export{typeProject};

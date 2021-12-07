@@ -3,7 +3,7 @@ import { ProjectModel } from "./project.js";
 const resolversProjects ={
     Query:{
         Proyectos: async (parent,args)=>{
-            const proyectos = await ProjectModel.find().populate('lider').populate('avance');
+            const proyectos = await ProjectModel.find().populate('lider').populate('inscripciones').populate('avance');
             return proyectos;
         },        
     },
@@ -30,7 +30,9 @@ const resolversProjects ={
                 estado:args.estado,
                 fase:args.fase,
                 lider:args.lider,       
-            });
+            },
+            {new:true}
+            );
             return proyectoEditado;
         },
     },

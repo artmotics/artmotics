@@ -22,6 +22,7 @@ const typeProject = gql`
         lider: Usuario
         objetivo:[Objetivo]
         avance:[Avance]
+        inscripciones:[Inscripcion]
     }  
     type Query {
         Proyectos: [Proyecto]

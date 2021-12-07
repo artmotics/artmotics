@@ -43,7 +43,9 @@ const resolversUsers ={
                 correo:args.correo,
                 rol:args.rol, 
                 estado:args.estado,
-            });
+            },
+            {new:true}
+            );
             return usuarioEditado;
         },
       

@@ -73,6 +73,11 @@ projectSchema.virtual("avance",{
     localField: "_id",
     foreignField: "proyecto",
 });
+projectSchema.virtual('inscripciones',{
+    ref: "Inscripcion",
+    localField: "_id",
+    foreignField: 'proyecto',
+});
 
 const ProjectModel = model('Proyecto',projectSchema,'projects');
 

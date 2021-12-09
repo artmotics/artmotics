@@ -2,6 +2,7 @@
   "name": "gestion-de-proyectos-mintic",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "dependencies": {
     "@auth0/auth0-react": "^1.8.0",
     "@craco/craco": "^6.4.0",
@@ -26,7 +27,8 @@
     "web-vitals": "^1.0.1"
   },
   "scripts": {
-    "start": "ts-node index.ts"
+    "start": "node index.js",
+    "dev":"nodemon index.js"
   },
   "eslintConfig": {
     "extends": [
@@ -48,6 +50,7 @@
   },
   "devDependencies": {
     "autoprefixer": "^9",
+    "nodemon": "^2.0.15",
     "postcss": "^7",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat"
   }

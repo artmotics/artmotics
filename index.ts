@@ -26,3 +26,4 @@ app.listen({ port: process.env.PORT || 4000 }), async () => {
     server.applyMiddleware({ app })// esto es para prender el servidor de apollo y que use los mismo middleware de express
     console.log("Servidor Listo")
 }
+//"start": "ts-node index.ts" 

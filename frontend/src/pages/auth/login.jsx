@@ -35,21 +35,23 @@ const Login = () => {
 
   return (
     
-    <div className='flex flex-col items-center justify-center w-full h-full p-10'>
-      <h1 className='text-xl font-bold text-gray-900'>Iniciar sesión</h1>
-      <form className='flex flex-col' onSubmit={submitForm} onChange={updateFormData} ref={form}>
-        <Input name='correo' type='email' label='Correo' required={true} />
-        <Input name='password' type='password' label='Contraseña' required={true} />
-        <ButtonLoading
-          disabled={Object.keys(formData).length === 0}
-          loading={mutationLoading}
-          text='Iniciar Sesión'
-        />
-      </form>
-      <span>¿No tienes una cuenta?</span>
-      <Link to='/auth/register'>
-        <span className='text-blue-700'>Regístrate</span>
-      </Link>
+    <div className='flex flex-col items-center justify-center w-full h-full p-10 '>
+      <div className='flex flex-col items-center justify-center w-50 h-50 p-20 rounded-3xl bg-gray-200'>
+        <h1 className='text-xl uppercase font-bold text-gray-900'>Iniciar sesión</h1>
+        <form className='flex flex-col' onSubmit={submitForm} onChange={updateFormData} ref={form}>
+          <Input name='correo' type='email' label='Correo'  required={true} />
+          <Input name='password' type='password' label='Contraseña' required={true} />
+          <ButtonLoading
+            disabled={Object.keys(formData).length === 0}
+            loading={mutationLoading}
+            text='Iniciar Sesión'
+          />
+        </form>
+        <span>¿No tienes una cuenta?</span>
+        <Link to='/auth/register'>
+          <span className='text-red-700'>Regístrate</span>
+        </Link>
+      </div>
     </div>
   );
 };

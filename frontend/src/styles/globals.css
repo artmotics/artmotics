@@ -3,13 +3,16 @@
 @tailwind utilities;
 
 .sidebar {
-  @apply w-64 bg-gray-200 shadow flex-col justify-between;
+  @apply w-52 bg-red-700 shadow flex-col justify-between;
 }
 
 .sidebar-route {
-  @apply rounded-md flex w-full justify-between cursor-pointer items-center m-3 p-3;
+  @apply rounded flex w-full justify-between cursor-pointer items-center m-3 p-3;
 }
 
 .input {
-  @apply p-2 border border-indigo-200 focus:outline-none focus:border-indigo-800 rounded-md shadow-sm;
+  @apply p-2 border border-red-200 focus:outline-none focus:border-red-800 rounded-md shadow-sm;
+}
+html {
+  background-color:rgba(85, 85, 85, 0.631);
 }

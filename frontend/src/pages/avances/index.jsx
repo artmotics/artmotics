@@ -38,7 +38,7 @@ const IndexAvances  = () =>{
                       <td>{u.proyecto.estado}</td>
                       <td>
                         <Link to={`/avances/editar/${u._id}`}>
-                          <i className='fas fa-pen text-yellow-600 hover:text-yellow-400 cursor-pointer' />
+                          <i className='fas fa-pen text-blue-600 hover:text-blue-400 cursor-pointer' />
                         </Link>
                       </td>
                     </tr>

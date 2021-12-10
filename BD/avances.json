@@ -1,0 +1,66 @@
+{ 
+    "_id" : ObjectId("61b269731d34fbe68f28cbe4"), 
+    "fecha" : ISODate("2121-12-10T00:00:00.000+0000"), 
+    "descripcion" : "Avance one", 
+    "observaciones" : [
+
+    ], 
+    "proyecto" : ObjectId("61b2673f1d34fbe68f28cbcc"), 
+    "creadoPor" : ObjectId("61b2655c1d34fbe68f28cbc0"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("61b269831d34fbe68f28cbe6"), 
+    "fecha" : ISODate("2121-12-10T00:00:00.000+0000"), 
+    "descripcion" : "Avance two", 
+    "observaciones" : [
+
+    ], 
+    "proyecto" : ObjectId("61b2673f1d34fbe68f28cbcc"), 
+    "creadoPor" : ObjectId("61b2655c1d34fbe68f28cbc0"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("61b2698c1d34fbe68f28cbe8"), 
+    "fecha" : ISODate("2121-12-10T00:00:00.000+0000"), 
+    "descripcion" : "Avance three", 
+    "observaciones" : [
+
+    ], 
+    "proyecto" : ObjectId("61b2673f1d34fbe68f28cbcc"), 
+    "creadoPor" : ObjectId("61b2655c1d34fbe68f28cbc0"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("61b26a1e1d34fbe68f28cbea"), 
+    "fecha" : ISODate("2121-12-10T00:00:00.000+0000"), 
+    "descripcion" : "Avance four", 
+    "observaciones" : [
+
+    ], 
+    "proyecto" : ObjectId("61b2684e1d34fbe68f28cbd8"), 
+    "creadoPor" : ObjectId("61b266211d34fbe68f28cbc6"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("61b26a281d34fbe68f28cbec"), 
+    "fecha" : ISODate("2121-12-10T00:00:00.000+0000"), 
+    "descripcion" : "Avance five", 
+    "observaciones" : [
+
+    ], 
+    "proyecto" : ObjectId("61b2684e1d34fbe68f28cbd8"), 
+    "creadoPor" : ObjectId("61b266211d34fbe68f28cbc6"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("61b26a2f1d34fbe68f28cbee"), 
+    "fecha" : ISODate("2121-12-10T00:00:00.000+0000"), 
+    "descripcion" : "Avance six", 
+    "observaciones" : [
+
+    ], 
+    "proyecto" : ObjectId("61b2684e1d34fbe68f28cbd8"), 
+    "creadoPor" : ObjectId("61b266211d34fbe68f28cbc6"), 
+    "__v" : NumberInt(0)
+}

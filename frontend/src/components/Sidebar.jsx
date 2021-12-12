@@ -41,7 +41,7 @@ const Logout = () => {
 const Logo = () => {
   return (
     <div className='py-3 w-full flex flex-col items-center justify-center'>
-      <img src='logo.png' alt='Logo' className='h-20' />
+      <img src='https://i.imgur.com/9ktNOcx.png' alt='Logo' className='h-16' />
       <span className='my-2 text-xl font-bold text-center'>ARTMOTICS</span>
     </div>
   );

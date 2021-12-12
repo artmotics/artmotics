@@ -3,7 +3,7 @@ import React from 'react';
 const Index = () => {
   return (
     <div>
-      <div className=' h-96'>Inicio</div>
+      <img src="https://imgur.com/jkOrB1K.png" className="stylePage2"/>
     </div>
   );
 };

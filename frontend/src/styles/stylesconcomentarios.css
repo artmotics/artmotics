@@ -1,0 +1,125 @@
+body {
+  margin: 0px;
+}
+
+ul {
+  list-style: none;
+  padding: 0px;
+  margin: 0px;
+}
+
+.navbar {
+  display: flex; /* Lo que hace es ponerme todas mis listas en horizontal */
+  justify-content: space-between; /* Lo que hace es justificarme el texto y me lo deja centrado y espaciado */
+  padding: 10px; /* Da un espacio entre entre cada componente de la pág */
+  background-color: rgb(237, 237, 238);
+  border-bottom: 1px solid gray; /* Es para colocarle un borde una linea que separa este contenido de otro  el solid gray lo pone un poco mas grueso*/
+  box-shadow: 1px 1px gray; /* Para colocar sombra en el borde*/
+  /* Lo que hace es colocarle color al fondo pero solo de la lista ul */
+}
+
+.navbar > li {
+  /* Cualquer li que haya por debajo de la clase navbar apliquele las siguientes clases */
+  display: flex; /* Con este codigo puedo confirar la altura a la que quiero que se mueva mi componente */
+  align-items: center; /* Con el flex y el align-items puedo mover esta configuración */
+}
+
+.logo {
+  height: 70px;
+}
+
+.botonGenerico {
+  border: 0px;
+  padding: 5px 10px; /* Separación de la letra al borde del recuadro en el que esta */
+  border-radius: 10px;
+  font-weight: bolder;
+}
+.botonGenerico:hover {
+  cursor: pointer; /*Si le paso el mouse al boton por encima puedo cambiar el cursor */
+  transform: scale(1.1);
+  /* Este codigo sirve para cuando me pose encima del boton este mismo se agrande o se encoja */
+}
+
+.mainButton {
+  background-color: #1bb76e; /*  color del fondo */
+  color: white; /* Color del texto del recuadro */
+}
+
+.mainButton:hover {
+  box-shadow: 1px 1px green; /* Para cuando acerque el mouse al boton me ponga bordes */
+  /*  color del borde del recuadro */
+}
+
+.secondaryButton {
+  background-color: #66d8f5;
+  color: white;
+}
+
+.secondaryButton:hover {
+  box-shadow: 1px 1px rgb(119, 229, 233);
+}
+
+.buscar {
+  background-color: white;
+  border: 1px solid gray;
+  padding: 4px;
+  border-radius: 8px;
+  width: 300px; /* Ancho de 300 pixeles para el cuadro de busqueda*/
+  display: flex;
+  justify-content: space-between; /* Entonces lo que hay dentro del recuadro de buscar lo dejara hacia los extremos */
+}
+
+.buscar:focus-within {
+  border: 1px solid blue;
+}
+
+.buscar > input {
+  /* Si en buscar tengo una clase que se llame input cualquier input que este por debajo de buscar*/
+  outline: none; /* Tendrá estas propiedades de aqui para abajo */
+  border: 0px;
+}
+
+.iconoBusqueda:hover {
+  color: blue;
+}
+
+.breedCardContainer {
+  display: flex;
+}
+
+.breedCard {
+  margin: 10px;
+  background-color: rgb(78, 78, 90);
+  box-shadow: 5px 10px 5px rgb(231, 231, 231);
+  border-radius: 10px;
+}
+
+.breedTitle {
+  color: white;
+  margin: 10px;
+  font-weight: bold;
+  font-size: x-large;
+}
+
+.contenedorImagen {
+  /* A ACÁ no le estoy poniendo tamaño a la foto sino al contenedor es decir al div*/
+  width: 240px;
+  height: 350px;
+  display: flex; /* Debo colocarlo o sino el object-fit no funciona  */
+  margin-bottom: 10px;
+}
+
+.contenedorImagen:hover {
+  cursor: pointer;
+  transform: scale(1.02);
+}
+
+.contenedorImagen > img {
+  /* a acá estoy diciendo que todas las imagenes o a todas las etiquetas de tipo img que esten dentro de este contenedor apliqueles cierto estilo*/
+  object-fit: cover; /*  como quiero que una imagen se organice dentro del contenedor ... si el padre no tiene display-: flex no funciona el object-fit */
+  /* Objetc-fit : cover sirve para que 2 imagenes tengan el mismo ancho y algo sin perder resolución  */
+  width: 100%; /*  Le indicamos a esta clase que se esta aplicando a una imagen que no sea mayor que su padre que sea igual, para que todas las imagenes queden del mismo tamaño */
+  /* La imagen se ajusta al tamaño del contenido "Div" al tamaño del div que anteriormente le puse sus limites */
+  border-top-right-radius: 10px; /* Estos dos codigos lo que hace es ponerme radio pero solo en la parte de arriba de las imagenes */
+  border-top-left-radius: 10px;
+}

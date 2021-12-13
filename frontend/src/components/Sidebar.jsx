@@ -41,7 +41,7 @@ const Logout = () => {
   };
   return (
     <li onClick={() => deleteToken()}>
-      <NavLink to="/auth/login" className="sidebar-route text-white">
+      <NavLink to="/inicio" className="sidebar-route text-white">
         <div className="flex items-center">
           <i className="fas fa-sign-out-alt" />
           <span className="text-sm  ml-2">Cerrar Sesión</span>

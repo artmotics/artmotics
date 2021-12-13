@@ -5,4 +5,4 @@
 
 `yarn start`
 
-!No nesecita inicar un backend
+!No nesecita inicializar un backend

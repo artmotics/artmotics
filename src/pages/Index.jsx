@@ -1,11 +1,18 @@
-import React from 'react';
+import React from "react";
+import { Link } from "react-router-dom";
 
 const Index = () => {
   return (
     <div>
-      <img src="https://imgur.com/jkOrB1K.png" className="stylePage2"/>
+      <Link to="/inicio">
+      <img src="https://i.imgur.com/BGrCyh2.png" className="stylePage2"/>
+      </Link>
     </div>
   );
 };
-
+{
+  /* <div>
+      
+    </div> */
+}
 export default Index;

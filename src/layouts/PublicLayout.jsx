@@ -1,12 +1,12 @@
 import React from "react";
-import Navbar from "components/Navbar";
+import NavBar from "components/NavBar";
 import Footer from "components/Footer";
 import Body from "components/Body";
 
 const PublicLayout = ({ children }) => {
   return (
     <div className="flex flex-col justify-between h-screen">
-      <Navbar />
+      <NavBar />
         <Body />
       <Footer />
     </div>

@@ -1,13 +1,13 @@
 import React, { useEffect }  from "react";
 import { useQuery } from "@apollo/client";
 import { GET_AVANCES } from "graphql/avances/queries";
-import { toast } from 'react-toastify';
-import { Link } from 'react-router-dom';
-import { Enum_Rol, Enum_EstadoUsuario } from 'utils/enums';
-
+/* import { toast } from 'react-toastify';
+ */import { Link } from 'react-router-dom';
+/* import { Enum_Rol, Enum_EstadoUsuario } from 'utils/enums';
+ */
 
 const IndexAvances  = () =>{
-    const {data, error, loading} = useQuery(GET_AVANCES)
+    const {data,/*  error, loading */} = useQuery(GET_AVANCES)
 
     useEffect(() => {
         console.log('data servudir', data);

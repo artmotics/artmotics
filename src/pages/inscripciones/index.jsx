@@ -12,7 +12,7 @@ import {
 } from 'components/Accordion';
 
 const IndexInscripciones = () => {
-  const { data, loading, error, refetch } = useQuery(GET_INSCRIPCIONES);
+  const { data, loading, /* error, */ refetch } = useQuery(GET_INSCRIPCIONES);
 
   useEffect(() => {
     console.log(data);
@@ -68,7 +68,7 @@ const Inscripcion = ({ inscripcion, refetch }) => {
       toast.success('Inscripcion aprobada con exito');
       refetch();
     }
-  }, [data]);
+  }, /* [data] */);
 
   useEffect(() => {
     if (error) {

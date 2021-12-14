@@ -7,14 +7,14 @@ import { useAuth } from 'context/authContext';
 import { REFRESH_TOKEN } from 'graphql/auth/mutations';
 import { useNavigate } from 'react-router-dom';
 import 'react-toastify/dist/ReactToastify.css';
-import PrivateRoute from 'components/PrivateRoute';
-
+/* import PrivateRoute from 'components/PrivateRoute';
+ */
 const PrivateLayout = () => {
   const navigate = useNavigate();
-  const { authToken, setToken } = useAuth();
+  const { /* authToken, */ setToken } = useAuth();
   const [loadingAuth, setLoadingAuth] = useState(true);
 
-  const [refreshToken, { data: dataMutation, loading: loadingMutation, error: errorMutation }] =
+  const [refreshToken, { data: dataMutation, loading: loadingMutation, /* error: errorMutation */ }] =
     useMutation(REFRESH_TOKEN);
 
   useEffect(() => {

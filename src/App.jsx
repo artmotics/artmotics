@@ -22,8 +22,8 @@ import 'styles/globals.css';
 import 'styles/tabla.css';
 import NuevoProyecto from 'pages/proyectos/NuevoProyecto';
 import IndexInscripciones from 'pages/inscripciones';
-import Footer from './components/Footer.jsx';
-
+/* import Footer from './components/Footer.jsx';
+ */
 // import PrivateRoute from 'components/PrivateRoute';
 
 const httpLink = createHttpLink({

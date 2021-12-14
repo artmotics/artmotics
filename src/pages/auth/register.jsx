@@ -15,7 +15,7 @@ const Register = () => {
   const navigate = useNavigate();
   const { form, formData, updateFormData } = useFormData();
 
-  const [registro, { data: dataMutation, loading: loadingMutation, error: errorMutation }] =
+  const [registro, { data: dataMutation, /* loading: loadingMutation, error: errorMutation  */}] =
     useMutation(REGISTRO);
 
   const submitForm = (e) => {

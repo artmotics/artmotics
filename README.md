@@ -65,3 +65,7 @@ Este proyecto está bajo la Licencia (MIT LICENSE) - mira el archivo [LICENSE.md
 
 - ## Arquitectura final del proyecto 🛠️
 ![Arquitectura final del proyecto](./ImagenesPortada/2.png)
+
+
+`yarn install`
+`yarn start`

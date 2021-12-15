@@ -2,10 +2,15 @@ import React, { useEffect, useState } from "react";
 import { useMutation, useQuery } from "@apollo/client";
 import { PROYECTOS } from "graphql/proyectos/queries";
 import DropDown from "components/Dropdown";
+import Input from "components/Input";
 import { Dialog } from "@mui/material";
-import { Enum_EstadoProyecto } from "utils/enums";
+import { Enum_EstadoProyecto, Enum_TipoObjetivo } from "utils/enums";
 import ButtonLoading from "components/ButtonLoading";
-import { EDITAR_PROYECTO } from "graphql/proyectos/mutations";
+import {
+  EDITAR_PROYECTO,
+  ELIMINAR_OBJETIVO,
+  EDITAR_OBJETIVO,
+} from "graphql/proyectos/mutations";
 import useFormData from "hooks/useFormData";
 import PrivateComponent from "components/PrivateComponent";
 import { Link } from "react-router-dom";
@@ -17,6 +22,7 @@ import {
   AccordionSummaryStyled,
   AccordionDetailsStyled,
 } from "components/Accordion";
+import ReactLoading from 'react-loading';
 
 const IndexProyectos = () => {
   const { data: queryData, loading /* error */ } = useQuery(PROYECTOS);
@@ -221,6 +227,67 @@ const Objetivo = ({ index, _id, idProyecto, tipo, descripcion }) => {
     </div>
   );
 }; */
+const EditarObjetivo = ({
+  descripcion,
+  tipo,
+  index,
+  idProyecto,
+  setShowEditDialog,
+}) => {
+  const { form, formData, updateFormData } = useFormData();
+
+  const [editarObjetivo, { data: dataMutation, loading }] = useMutation(
+    EDITAR_OBJETIVO,
+    {
+      refetchQueries: [{ query: PROYECTOS }],
+    }
+  );
+
+  useEffect(() => {
+    if (dataMutation) {
+      toast.success("Objetivo editado con exito");
+      setShowEditDialog(false);
+    }
+  }, [dataMutation, setShowEditDialog]);
+
+  const submitForm = (e) => {
+    e.preventDefault();
+    editarObjetivo({
+      variables: {
+        idProyecto,
+        indexObjetivo: index,
+        campos: formData,
+      },
+    }).catch((error) => {
+      toast.error("Error editando el objetivo", error);
+    });
+  };
+  return (
+    <div className="p-4">
+      <h1 className="text-2xl font-bold text-gray-900">Editar Objetivo</h1>
+      <form ref={form} onChange={updateFormData} onSubmit={submitForm}>
+        <DropDown
+          label="Tipo de Objetivo"
+          name="tipo"
+          required
+          options={Enum_TipoObjetivo}
+          defaultValue={tipo}
+        />
+        <Input
+          label="Descripcion del objetivo"
+          name="descripcion"
+          required
+          defaultValue={descripcion}
+        />
+        <ButtonLoading
+          text="Confirmar"
+          disabled={Object.keys(formData).length === 0}
+          loading={loading}
+        />
+      </form>
+    </div>
+  );
+};
 
 const InscripcionProyecto = ({ idProyecto, estado, inscripciones }) => {
   const [estadoInscripcion, setEstadoInscripcion] = useState("");

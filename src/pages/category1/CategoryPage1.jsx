@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 
 const Category1 = () => {
   return <div>pagina /category/page1</div>;

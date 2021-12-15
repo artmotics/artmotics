@@ -1,7 +1,6 @@
-FROM node:12 
+FROM node:14
 WORKDIR /app
-COPY package*.json ./
-RUN yarn install 
-COPY . .
+COPY package.json ./
+COPY yarn.lock ./
+RUN yarn install
 CMD ["yarn", "start"]
-

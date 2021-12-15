@@ -14,7 +14,7 @@
   @apply p-2 border border-red-200 focus:outline-none focus:border-red-800 rounded-md shadow-sm;
 }
 html {
-  background-color:rgba(85, 85, 85, 0.631);
+  background-color: rgba(85, 85, 85, 0.631);
 }
 .background-radial {
   background: rgb(63, 94, 251);

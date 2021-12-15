@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react';
+import { useRef, useState } from "react";
 
 const useFormData = (initial) => {
   const form = useRef(initial);
@@ -7,8 +7,8 @@ const useFormData = (initial) => {
     const fd = new FormData(form.current);
     const obj = {};
     fd.forEach((value, key) => {
-      if (key.includes('nested')) {
-        const [/* p0, */ p1, p2, p3] = key.split('||');
+      if (key.includes("nested")) {
+        const [/* p0, */ p1, p2, p3] = key.split("||");
         if (Object.keys(obj).includes(p1)) {
           if (Object.keys(obj[p1]).includes(p2)) {
             obj[p1][p2][p3] = value;

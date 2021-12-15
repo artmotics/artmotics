@@ -1,5 +1,4 @@
-# artmotics
-artmotics
+
 # Artmotics 🚀
 
 Proyecto oficial de desarrollo de software
@@ -68,4 +67,5 @@ Este proyecto está bajo la Licencia (MIT LICENSE) - mira el archivo [LICENSE.md
 
 
 `yarn install`
+
 `yarn start`

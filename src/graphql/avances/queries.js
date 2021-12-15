@@ -1,7 +1,7 @@
-import { gql } from '@apollo/client';
+import { gql } from "@apollo/client";
 
 const GET_AVANCES = gql`
-query Avances {
+  query Avances {
     Avances {
       fecha
       descripcion
@@ -11,7 +11,6 @@ query Avances {
       }
     }
   }
-
 `;
 
-export { GET_AVANCES}
+export { GET_AVANCES };

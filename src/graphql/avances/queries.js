@@ -18,18 +18,19 @@ query Usuarios {
 `;
 
 const GET_AVANCE = gql `
-query Avance($_id: String!) {
-    Avance(_id: $_id) {
-      _id
-      fecha
+query Avance($id: String!) {
+  Avance(_id: $id) {
+    _id
+    fecha
       descripcion
       proyecto {
         nombre
       }
       creadoPor {
         identificacion
-    }
+      }
   }
+}
 
 `;
 

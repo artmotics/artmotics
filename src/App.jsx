@@ -32,7 +32,7 @@ import IndexInscripciones from "pages/inscripciones";
 // import PrivateRoute from 'components/PrivateRoute';
 
 const httpLink = createHttpLink({
-  uri: 'http://localhost:4000/graphql',
+  uri: 'http://ec2-3-83-81-67.compute-1.amazonaws.com:49160/graphql',
 });
 
 const authLink = setContext((_, { headers }) => {

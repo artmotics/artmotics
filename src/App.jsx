@@ -32,7 +32,7 @@ import IndexInscripciones from "pages/inscripciones";
 // import PrivateRoute from 'components/PrivateRoute';
 
 const httpLink = createHttpLink({
-  uri: "https://c4back.herokuapp.com/graphql",
+  uri: 'http://localhost:4000/graphql',
 });
 
 const authLink = setContext((_, { headers }) => {

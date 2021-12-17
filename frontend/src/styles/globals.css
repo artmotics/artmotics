@@ -1,0 +1,30 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.sidebar {
+  @apply w-52 bg-red-700 shadow flex-col justify-between;
+}
+
+.sidebar-route {
+  @apply rounded flex w-full justify-between cursor-pointer items-center m-3 p-3;
+}
+
+.input {
+  @apply p-2 border border-red-200 focus:outline-none focus:border-red-800 rounded-md shadow-sm;
+}
+html {
+  background-color: rgba(85, 85, 85, 0.631);
+}
+.background-radial {
+  background: rgb(63, 94, 251);
+  background: radial-gradient(
+    circle,
+    rgba(63, 94, 251, 1) 0%,
+    rgba(252, 70, 107, 1) 100%
+  );
+}
+
+.stylePage2 {
+  min-width: 100%;
+}

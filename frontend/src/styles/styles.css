@@ -1,0 +1,95 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* @media (max-width: 600px) {
+  .sidebar{
+    display:none
+  }
+} Este codigo lo que me permite si lo exporto en el proyecto es que para pantallas menores a la resolución de 600px no va a mostrar el sidebar es reponsive*/
+
+/*.tabla td, con las comas yo puedo agregar varios css a varios selectores, entonces a los td y y th que hagan parte de una tabla se le aplicaran estos estilos*/
+/*.tabla th{ se decide colocar los estilos de la tabla con css puro porque manejar estilos para tablas con tailwind es dificil y se tiende a confundir el tabla th quiere decir que tambien vamos a aplicarle ese estilo a los th que son los titulos de la tabla*/
+.tabla {
+  width: 100%;
+  margin: 10px; /* Para que el titulo principal(Todos los diseños) se separé de la tabla  */
+}
+.tabla td,
+.tabla th {
+  padding: 8px; /* para darle separacion a cada componente de la tabla */
+  border: 1px solid #ddd; /* para colocarle como borde a toda la tabla */
+}
+
+/* Solo para lo header vamos a colocarles un fondo */
+.tabla th {
+  background-color: #04aa46;
+  color: white; /* color del texto de los header (titulos de la tabla) */
+  padding-top: 12px; /* para que se vea mas grande el header de la tabla */
+  padding-bottom: 12px;
+  text-align: left; /* para que nos alinie el texto a la izquierda, pero cuando la table tiene el ancho del 100% de la pagina */
+}
+
+/* Vamos a usar una seudo clase para hacer la tabla se parezca a las de excel, es decir que una fila tenga un color y otra fila de otro color */
+/* .tabla tr:nth-child() necesitamos que ciertas filas (tr) nth-child()=nos permite tener informacion para ciertos hijos de nuestra tabla, entonces si dentro del parentesis de nth-child(3) coloco el 3 entonces el 3er hijo es decir la tercera fila quedaria de un color si despues coloco background-color: red;*/
+.tabla tr:nth-child(even) {
+  /* even aplica color solo a las filas pares */
+  background-color: #f2f2f2;
+}
+
+.tabla tr:hover {
+  background-color: #ddd;
+  cursor: pointer; /* Para saber que el cursor esta encima de los tr (filas) el cursor se transforma en una manito para dar a entender que se puede selecionar */
+}
+.button {
+  display: inline-block;
+  padding: 5px 5px;
+  font-size: 16px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #2393be;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 4px #999;
+}
+
+.button:hover {
+  background-color: #007cca;
+  color: white;
+}
+.button:active {
+  background-color: #3da2dd;
+  box-shadow: 0 5px #666;
+  transform: translateY(3px);
+}
+.button2 {
+  display: inline-block;
+  padding: 5px 5px;
+  font-size: 16px;
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  outline: none;
+  color: #fff;
+  background-color: #1c3003;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 0 4px #999;
+}
+
+.button2:hover {
+  background-color: #007cca;
+  color: white;
+}
+.button2:active {
+  background-color: #06fd06;
+  box-shadow: 0 5px #666;
+  transform: translateY(3px);
+}
+
+.espacios {
+  margin: 10px;
+  padding: 30px;
+}

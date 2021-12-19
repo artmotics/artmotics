@@ -73,7 +73,7 @@ const AccordionProyecto = ({ proyecto }) => {
           </div>
         </AccordionSummaryStyled>
         <AccordionDetailsStyled>
-          <PrivateComponent roleList={["ADMINISTRADOR", "LIDER"]}>
+          <PrivateComponent roleList={["ADMINISTRADOR"]}>
             <button
               type="button"
               onClick={() => {

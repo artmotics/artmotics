@@ -1,0 +1,53 @@
+
+name: CI_CD_MAIN
+
+on:
+  [push]
+
+jobs:
+  Instalacion:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - uses: actions/setup-node@v2
+
+      - name: Instalacion de dependencias
+        run: yarn install
+
+      - name: Revision de codigo
+        run: yarn install
+
+  Build:
+
+    runs-on: ubuntu-latest
+
+
+    steps:
+
+      - uses: actions/checkout@v2
+
+      - uses: actions/setup-node@v2
+
+      - name: Instalacion de dependencias
+        run: yarn install
+
+      - name: Compilacion del proyecto
+        run: yarn build
+
+  Construccion-docker:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Build the Docker image
+      run: docker build . --file Dockerfile --tag artmotics-front:$(date +%s)
+
+
+
+
+  
+
+

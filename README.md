@@ -68,4 +68,4 @@ Este proyecto está bajo la Licencia (MIT LICENSE) - mira el archivo [LICENSE.md
 
 `yarn install`
 
-`yarn start`
+`yarn start `

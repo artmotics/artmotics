@@ -1,11 +1,8 @@
 
-
 name: CI_CD_MAIN
-
 
 on:
   [push]
-
 
 jobs:
   Instalacion:
